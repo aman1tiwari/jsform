@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weight Detector</title>
+  <style>
+    .container {
+      text-align: center;
+      width: 60;
+      padding: 6%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Enter your Details</h2>
+
+    <label for="age">Enter Age :</label>
+    <input type="text" id="fage" name="age" /><br /><br />
+
+    <label for="weight">Enter Weight:</label>
+    <input type="text" id="fweight" name="weight" /><br /><br />
+
+    <button style="align-items: center" type="button" onclick="submit()">
+      Submit
+    </button>
+  </div>
+  <strong>
+    <div style="text-align: center; font-size: 50px" id="demo"></div>
+  </strong>
+  <script>
+    function submit() {
+      var x = document.getElementById("fage").value;
+      var y = document.getElementById("fweight").value;
+      x = parseInt(x);
+      y = parseInt(y);
+
+      console.log("Value of x: " + x);
+      console.log("Value of y: " + y);
+      if (x >= 5 && x <= 7) {
+        if (y < 15) {
+          Result = "Underweight";
+          console.log("Result= " + Result);
+        } else if (y >= 15 && y <= 20) {
+          Result = "Perfect";
+          console.log("Result= " + Result);
+        } else if (y > 20) {
+          Result = "Overweight";
+          console.log("Result= " + Result);
+        }
+      } else if (x >= 8 && x <= 10) {
+        if (y < 21) {
+          Result = "Underweight";
+        } else if (y >= 21 && y <= 25) {
+          Result = "Perfect";
+        } else if (y > 25) {
+          Result = "Overweight";
+        }
+      } else if (x >= 10 && x <= 15) {
+        if (y < 26) {
+          Result = "Underweight";
+        } else if (y >= 26 && y <= 30) {
+          Result = "Perfect";
+        } else if (y > 30) {
+          Result = "Overweight";
+        }
+      } else if (x >= 16 && x <= 20) {
+        if (y < 31) {
+          Result = "Underweight";
+        } else if (y >= 31 && y <= 40) {
+          Result = "Perfect";
+        } else if (y > 40) {
+          Result = "Overweight";
+        }
+      } else {
+        Result = "Please Enter logical input";
+      }
+      document.getElementById("demo").innerHTML = "Result= " + Result;
+    }
+  </script>
+</body>
+
+</html>
